@@ -1,6 +1,6 @@
 <template>
 	<div class="bg-neutral-750 min-h-screen">
-		<nav class="">
+		<nav class="mb-10">
 			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 				<NuxtLink to="/" class="group flex items-center text-white hover:text-techhive-green hover:scale-105 hover:rotate-1 ease-in-out transition transform duration-300">
 					<img :src="icon" class="h-8 w-8 mr-3 transition transform duration-300" alt="TechHive Logo" />
