@@ -1,5 +1,5 @@
 <template>
-	<div class="mt-24 mb-24 px-4 md:px-0">
+	<div id="portfolio" class="mt-24 mb-24 px-4 md:px-0">
 		<div class="w-full md:w-10/12 lg:w-8/12 md:mx-auto">
 			<p class="font-teko text-white text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-center">
 				OUR PROJECTS

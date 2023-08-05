@@ -52,7 +52,7 @@ const navItems = [
 	},
 	{
 		name: "Portfolio",
-		link: "/portfolio",
+		link: "/#portfolio",
 	},
 	{
 		name: "About",
