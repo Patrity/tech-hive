@@ -1,5 +1,6 @@
 <template>
 	<IndexHero />
+	<IndexWhoWeAre />
 </template>
 <script setup lang="ts">
 
