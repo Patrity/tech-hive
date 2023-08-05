@@ -8,16 +8,13 @@ export default defineNuxtConfig({
             siteDescription: 'Programming, Marketing, and Consulting',
             language: 'en-US',
             titleSeparator: '|',
-            trailingSlash: true,
         },
-    },
-    unhead: {
-        ogTitleTemplate: '%s | TechHive Labs',
     },
     app: {
         head: {
             titleTemplate: 'TechHive Labs'
         }
+
     },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -25,6 +22,4 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/supabase'
   ],
-  extends: [
-  ]
 })
