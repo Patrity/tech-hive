@@ -22,4 +22,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/supabase'
   ],
+    supabase: {
+        redirect: false
+    }
 })
