@@ -2,10 +2,21 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://techhivelabs.com',
+            siteUrl: 'https://takeoffhelper.com',
+            runMode: process.env.NUXT_RUNMODE || 'production',
             siteName: 'TechHive Labs',
             siteDescription: 'Programming, Marketing, and Consulting',
-            language: 'en', // prefer more explicit language codes like `en-AU` over `en`
+            language: 'en-US',
+            titleSeparator: '|',
+            trailingSlash: true,
+        },
+    },
+    unhead: {
+        ogTitleTemplate: '%s | TechHive Labs',
+    },
+    app: {
+        head: {
+            titleTemplate: 'TechHive Labs'
         }
     },
   modules: [
@@ -16,6 +27,5 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase'
   ],
   extends: [
-    'nuxt-seo-kit'
   ]
 })
