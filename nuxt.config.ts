@@ -8,20 +8,24 @@ export default defineNuxtConfig({
             siteDescription: 'Programming, Marketing, and Consulting',
             language: 'en-US',
             titleSeparator: '|',
+            trailingSlash: true,
         },
     },
     app: {
         head: {
-            titleTemplate: 'TechHive Labs'
+            titleTemplate: '%pageTitle %titleSeparator %siteName'
         }
 
     },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image',
-    '@pinia/nuxt',
-    '@nuxtjs/supabase'
-  ],
+    modules: [
+      '@nuxtjs/tailwindcss',
+      '@nuxt/image',
+      '@pinia/nuxt',
+      '@nuxtjs/supabase'
+    ],
+    extends: [
+        'nuxt-seo-kit'
+    ],
     supabase: {
         redirect: false
     }
