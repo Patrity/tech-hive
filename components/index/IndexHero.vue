@@ -1,5 +1,5 @@
 <template>
-	<div class="md:flex gap-4 block items-center mt-8 md:mt-16 xl:mt-32">
+	<div class="md:flex gap-4 block items-center mt-8 md:mt-16 xl:mt-32 mb-24 lg:mb-32 xl:mb-64">
 		<div class="md:w-3/5">
 			<img :src="heroImg" alt="hero image" class="md:rounded-xl md:rounded-l-none"/>
 		</div>
