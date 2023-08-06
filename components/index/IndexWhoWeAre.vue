@@ -7,7 +7,7 @@
 			<div class="flex flex-col-reverse md:flex-row gap-2 items-center mt-6">
 				<div class="text-center w-full sm:w-1/2 md:w-1/3 max-w-[400px]">
 					<div class="mt-6 mx-6 bg-neutral-750 rounded-xl px-8 pb-4 border-2 border-neutral-950 drop-shadow-lg">
-						<NuxtImg src="https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/tony.jpg?t=2023-08-06T19%3A46%3A34.860Z" loading="lazy" :preload="true" format="webp" alt="Tony"
+						<NuxtImg src="https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/tony.webp" loading="lazy" :preload="true" format="webp" width="460" height="460" alt="Tony"
 						     class="rounded-full border-neutral-400 border-2 mx-auto mt-6 shadow-neutral-950 shadow-lg"/>
 						<div class="text-white">
 							<p class="pt-4 font-medium text-xl">
