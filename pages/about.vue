@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-auto w-1/2 pt-24 mb-64">
+	<div class="mx-auto w-11/12 md:w-8/12 lg:w-1/2 pt-12 md:pt-24">
 		<p class="font-teko text-5xl text-center text-white">
 			About
 		</p>
@@ -17,7 +17,7 @@
 		<div class="text-center text-3xl font-medium">
 			<h1 class="text-white">Technologies powering</h1>
 			<h1 class="text-white font-semibold">TechHive</h1>
-			<div class="mt-6 bg-neutral-900 rounded-2xl flex flex-row justify-center gap-4 py-12 px-12 w-fit mx-auto">
+			<div class="mt-6 bg-neutral-900 rounded-2xl flex flex-row justify-center gap-2 sm:gap-4 px-2 py-2 sm:py-12 sm:px-12 w-fit mx-auto">
 				<NuxtLink href="https://vuejs.org/" target="_blank" class="logos">
 					<img :src='vue' alt="VueJS" class="h-16 w-16" />
 				</NuxtLink>
