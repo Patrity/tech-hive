@@ -9,6 +9,7 @@ export default defineNuxtConfig({
             language: 'en-US',
             titleSeparator: '|',
             trailingSlash: true,
+            indexable: true,
         },
     },
     app: {
