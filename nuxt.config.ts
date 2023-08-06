@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            siteUrl: 'https://takeoffhelper.com',
+            siteUrl: 'https://techhivelabs.net',
             runMode: process.env.NUXT_RUNMODE || 'production',
             siteName: 'TechHive Labs',
             siteDescription: 'Programming, Marketing, and Consulting',
@@ -22,7 +22,6 @@ export default defineNuxtConfig({
       '@nuxtjs/tailwindcss',
       '@nuxt/image',
       '@pinia/nuxt',
-      '@nuxtjs/supabase',
       'nuxt-headlessui'
     ],
     extends: [
