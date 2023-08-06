@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-neutral-750 min-h-screen">
+	<div class="bg-neutral-750 min-h-screen flex flex-col">
 		<TransitionRoot as="template" :show="sidebarOpen" class="md:hidden">
 			<Dialog as="div" class="relative z-50" @close="sidebarOpen = false">
 				<TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
@@ -65,8 +65,10 @@
 			</div>
 		</nav>
 		
+		<div class="flex-grow">
+			<slot />
+		</div>
 		
-		<slot />
 		<div class="w-full bg-black pt-12 pb-4">
 			<div class="mx-auto flex text-white w-3/4 gap-2">
 				<p class="flex-auto text-left">
