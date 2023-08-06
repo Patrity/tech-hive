@@ -21,12 +21,16 @@ export default defineNuxtConfig({
       '@nuxtjs/tailwindcss',
       '@nuxt/image',
       '@pinia/nuxt',
-      '@nuxtjs/supabase'
+      '@nuxtjs/supabase',
+      'nuxt-headlessui'
     ],
     extends: [
         'nuxt-seo-kit'
     ],
     supabase: {
         redirect: false
+    },
+    headlessui: {
+        prefix: ''
     }
 })
