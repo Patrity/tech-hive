@@ -4,7 +4,7 @@
 			<p class="font-teko text-white text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-center">
 				OUR PROJECTS
 			</p>
-			<p class="mt-6">
+			<p class="mt-6 text-white">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam orci, tincidunt at risus sed,
 				vestibulum feugiat erat. Quisque pulvinar tempus nisi sit amet consequat. Maecenas euismod nibh ac dolor
 				porta, sed ultrices nulla tempor. Phasellus eget vestibulum nunc, at aliquet metus. In lacinia, lectus
