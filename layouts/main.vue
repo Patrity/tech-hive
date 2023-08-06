@@ -1,21 +1,62 @@
 <template>
 	<div class="bg-neutral-750 min-h-screen">
+		<TransitionRoot as="template" :show="sidebarOpen" class="md:hidden">
+			<Dialog as="div" class="relative z-50" @close="sidebarOpen = false">
+				<TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
+					<div class="fixed inset-0 bg-neutral-900/80" />
+				</TransitionChild>
+				<div class="fixed inset-0 flex">
+					<TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
+						<DialogPanel class="relative mr-16 flex w-full max-w-xs flex-1">
+							<TransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
+								<div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+									<button type="button" class="-m-2.5 p-2.5" @click="sidebarOpen = false">
+										<span class="sr-only">Close sidebar</span>
+										<XMarkIcon class="h-6 w-6 text-white" aria-hidden="true" />
+									</button>
+								</div>
+							</TransitionChild>
+							<!-- Sidebar component, swap this element with another sidebar if you like -->
+							<div class="flex grow flex-col gap-y-5 overflow-y-auto bg-neutral-700 px-6 ring-1 ring-white/10">
+								<div class="flex h-30 shrink-0 items-center">
+									<img :src="logo" class="mt-8 h-24 mx-auto" alt="TechHive Logo" />
+								</div>
+								<nav class="flex flex-1 flex-col mt-12">
+									<ul role="list" class="flex flex-1 flex-col gap-y-7">
+										<li>
+											<ul role="list" class="-mx-2 space-y-5">
+												<li v-for="item in navItems" :key="item.name">
+													<NuxtLink :to="item.link" :class="[isCurrentPage(item.link) ? 'bg-stone-600' : '', 'flex text-lg gap-2 font-medium text-neutral-200 p-2 px-6 rounded-xl']">
+														<component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+														{{ item.name }}
+													</NuxtLink>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</DialogPanel>
+					</TransitionChild>
+				</div>
+			</Dialog>
+		</TransitionRoot>
 		<nav class="mb-10">
 			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-				<NuxtLink to="/" class="group flex items-center text-white hover:text-techhive-green hover:scale-105 hover:rotate-1 ease-in-out transition transform duration-300">
+				<a href="/" class="group flex items-center text-white hover:text-techhive-green hover:scale-105 hover:rotate-1 ease-in-out transition transform duration-300">
 					<img :src="icon" class="h-8 w-8 mr-3 transition transform duration-300" alt="TechHive Logo" />
 					<span class="self-center text-3xl font-semibold whitespace-nowrap font-teko">TechHive Labs</span>
-				</NuxtLink>
-				<button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 md:hidden focus:outline-none hover:bg-neutral-600 rounded-lg bg-opacity-0 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+				</a>
+<!--				Mobile Nav Button-->
+				<button type="button" @click="sidebarOpen = true" class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-gray-400 md:hidden focus:outline-none hover:bg-neutral-600 rounded-lg bg-opacity-0 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
 					<span class="sr-only">Open main menu</span>
-					<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-					</svg>
+					<component :is="Bars3Icon" class="w-8 h-8" aria-hidden="true" />
 				</button>
+				
 				<div class="hidden w-full md:block md:w-auto" id="navbar-default">
 					<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
 						<li v-for="navItem in navItems">
-							<NuxtLink :to="navItem.link" class="py-2 px-3 text-white md:text-techhive-green font-bold hover:text-gray-300 transition transform duration-300 ease-in-out">
+							<NuxtLink :to="navItem.link" :class="[isCurrentPage(navItem.link) ? 'md:text-white' : '', 'py-2 px-3 text-white md:text-techhive-green font-bold hover:text-gray-300 transition transform duration-300 ease-in-out']">
 								{{ navItem.name }}
 							</NuxtLink>
 						</li>
@@ -23,6 +64,8 @@
 				</div>
 			</div>
 		</nav>
+		
+		
 		<slot />
 		<div class="w-full bg-black pt-12 pb-4">
 			<div class="mx-auto flex text-white w-3/4 gap-2">
@@ -44,23 +87,37 @@
 </template>
 <script setup lang="ts">
 import icon from "assets/th-icon.svg";
+import logo from "assets/logo.svg";
+import { Bars3Icon, XMarkIcon, HomeIcon, BookOpenIcon, AcademicCapIcon, ChatBubbleLeftRightIcon} from "@heroicons/vue/24/outline";
+
+const sidebarOpen = ref(false);
+
 
 const navItems = [
 	{
 		name: "Home",
 		link: "/",
+		icon: HomeIcon,
 	},
 	{
 		name: "Portfolio",
 		link: "/#portfolio",
+		icon: AcademicCapIcon,
 	},
 	{
 		name: "About",
 		link: "/about",
+		icon: BookOpenIcon,
 	},
 	{
 		name: "Contact",
 		link: "/contact",
+		icon: ChatBubbleLeftRightIcon,
 	}
 ];
+
+const router = useRouter();
+const isCurrentPage = (link: string) => {
+	return link === router.currentRoute.value.path;
+};
 </script>
