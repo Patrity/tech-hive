@@ -19,10 +19,11 @@ export default defineNuxtConfig({
 
     },
     modules: [
-      '@nuxtjs/tailwindcss',
-      '@nuxt/image',
-      '@pinia/nuxt',
-      'nuxt-headlessui'
+        '@nuxtjs/tailwindcss',
+        '@nuxt/image',
+        '@pinia/nuxt',
+        'nuxt-headlessui',
+        'nuxt-swiper',
     ],
     extends: [
         'nuxt-seo-kit'
