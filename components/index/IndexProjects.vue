@@ -5,21 +5,20 @@
 				OUR PROJECTS
 			</p>
 			<div>
-				<Swiper class="w-full text-center"
+				<Swiper class="w-full md:w-3/4 lg:w-1/2 2xl:w-1/3 text-center"
 				        :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination]"
-				        :slides-per-view="2"
+				        :slides-per-view="1"
 				        :loop="true"
-				        :space-between="1"
 				        :centeredSlides="true"
 				        :effect="'creative'"
 				        :pagination="paginationOtions"
 				        :autoplay="autoplayOptions"
 						:creative-effect="creativeEffectOptions">
 					<SwiperSlide as="div" v-for="project in projects" class="rounded-2xl">
-						<div class="">
-							<div class=" h-80 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-center" :style="{ backgroundImage: `url(${project.image})` }" :title="project.name">
+						<div class="w-full mx-auto">
+							<div class="bg-neutral-300 md:bg-opacity-0 h-80 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-no-repeat bg-contain md:bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }" :title="project.name">
 							</div>
-							<div class="py-8 mb-8 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+							<div class="py-8 mb-8 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b-2xl p-4 flex flex-col justify-between leading-normal">
 								<div class="">
 									<IndexSwiperCardType :type="project.type"/>
 									<div class="text-gray-900 font-bold text-xl mb-2">{{project.name}}</div>
@@ -52,13 +51,15 @@ const paginationOtions = {
 const creativeEffectOptions = {
 	limitProgress: 1,
 	prev: {
-		shadow: true,
+		shadow: false,
 		translate: ['-120%', 0, -500],
-		scale: 0.8,
+		opacity: 0,
 	},
 	next: {
-		shadow: true,
+		shadow: false,
 		translate: ['120%', 0, -500],
+		scale: 1,
+		opacity: 0,
 	},
 	perspective: true,
 	
