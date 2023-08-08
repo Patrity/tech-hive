@@ -56,7 +56,7 @@
 				<div class="hidden w-full md:block md:w-auto" id="navbar-default">
 					<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
 						<li v-for="navItem in navItems">
-							<NuxtLink :to="navItem.link" :class="[isCurrentPage(navItem.link) ? 'md:text-white' : '', 'py-2 px-3 text-white md:text-techhive-green font-bold hover:text-gray-300 transition transform duration-300 ease-in-out']">
+							<NuxtLink :to="navItem.link" :class="[isCurrentPage(navItem.link) ? 'md:text-white border-b-2' : '', 'py-2 px-3 text-white md:text-techhive-green font-bold hover:text-gray-300 transition transform duration-300 ease-in-out']">
 								{{ navItem.name }}
 							</NuxtLink>
 						</li>
