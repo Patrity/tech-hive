@@ -22,7 +22,7 @@
 		
 		<label for="email" class="block font-medium text-white mt-6">Name</label>
 		<div class="relative mt-0 rounded-md shadow-sm">
-			<input type="email" v-model="name" name="email" id="email" :class="[validateName ? 'text-neutral-750' : 'text-red-900 ring-red-300 focus:ring-red-500', 'px-2 block w-full rounded-md border-0 py-1.5 pr-10 ring-1 ring-inset placeholder:text-neutral-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6']" placeholder="John Smith" />
+			<input type="text" v-model="name" name="email" id="email" :class="[validateName ? 'text-neutral-750' : 'text-red-900 ring-red-300 focus:ring-red-500', 'px-2 block w-full rounded-md border-0 py-1.5 pr-10 ring-1 ring-inset placeholder:text-neutral-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6']" placeholder="John Smith" />
 			<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
 				<UserIcon v-if="validateName" class="h-5 w-5 text-neutral-750" aria-hidden="true" />
 				<ExclamationCircleIcon v-else class="h-5 w-5 text-red-500" aria-hidden="true" />
