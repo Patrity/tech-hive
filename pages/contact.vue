@@ -1,14 +1,18 @@
 <template>
 <div class="w-1/3 mx-auto mt-12">
-	<div>
-		<p class="font-teko text-5xl text-center text-white">
-			Contact
-		</p>
+	<p class="font-teko text-5xl text-center text-white">
+		Contact
+	</p>
+	<div v-if="formSubmitted" class="text-center text-techhive-green font-medium text-xl mt-6">
 		<p>
-		
+			Your message has been sent!
 		</p>
+		<NuxtLink to="/" class="flex text-white flex-auto items-center justify-center mt-4 hover:underline group">
+			Go home
+			<ArrowUturnLeftIcon class="w-5 h-5 ml-2 group-hover:scale-125 transition transform duration-300 ease-in-out" />
+		</NuxtLink>
 	</div>
-	<form name="contact" method="post" netlify class="w-3/4 mx-auto">
+	<form v-else name="contact" @submit.prevent="submitForm()" class="w-3/4 mx-auto">
 		<label for="email" class="block font-medium text-white">Email</label>
 		<div class="relative mt-0 rounded-md shadow-sm">
 			<input type="email" v-model="email" name="email" id="email" :class="[validateEmail ? 'text-neutral-750' : 'text-red-900 ring-red-300 focus:ring-red-500', 'px-2 block w-full rounded-md border-0 py-1.5 pr-10 ring-1 ring-inset placeholder:text-neutral-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6']" placeholder="you@example.com" />
@@ -83,7 +87,7 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ExclamationCircleIcon,EnvelopeIcon, UserIcon, ChevronUpDownIcon, CheckIcon, PaperAirplaneIcon } from '@heroicons/vue/20/solid'
+import { ExclamationCircleIcon,EnvelopeIcon, UserIcon, ChevronUpDownIcon, CheckIcon, PaperAirplaneIcon, ArrowUturnLeftIcon } from '@heroicons/vue/20/solid'
 definePageMeta({
 	layout: "main",
 });
@@ -100,6 +104,7 @@ const name = ref("");
 const contactType = ref(contactTypes[0]);
 const subject = ref("");
 const message = ref("");
+const formSubmitted = ref(false);
 
 const validateEmail = computed(() => {
 	if (email.value === "" ) {
@@ -115,5 +120,11 @@ const validateName = computed(() => {
 	const re = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 	return re.test(name.value);
 });
+
+function submitForm() {
+	if (validateEmail.value && validateName.value) {
+		console.log("Form submitted");
+	}
+}
 
 </script>
