@@ -8,7 +8,7 @@
 		
 		</p>
 	</div>
-	<form name="contact" method="post" data-netlify="true" class="w-3/4 mx-auto">
+	<form name="contact" method="post" netlify class="w-3/4 mx-auto">
 		<label for="email" class="block font-medium text-white">Email</label>
 		<div class="relative mt-0 rounded-md shadow-sm">
 			<input type="email" v-model="email" name="email" id="email" :class="[validateEmail ? 'text-neutral-750' : 'text-red-900 ring-red-300 focus:ring-red-500', 'px-2 block w-full rounded-md border-0 py-1.5 pr-10 ring-1 ring-inset placeholder:text-neutral-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6']" placeholder="you@example.com" />
