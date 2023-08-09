@@ -12,7 +12,7 @@
 			<ArrowUturnLeftIcon class="w-5 h-5 ml-2 group-hover:scale-125 transition transform duration-300 ease-in-out" />
 		</NuxtLink>
 	</div>
-	<form v-else name="contact" @submit.prevent="submitForm()" class="w-3/4 mx-auto">
+	<form v-else name="contact" @submit.prevent="validateForm()" class="w-3/4 mx-auto">
 		<div class="flex flex-col lg:flex-row gap-8">
 			<div class="w-full lg:w-1/2">
 				<label for="email" class="block font-medium text-white">Email</label>
@@ -75,10 +75,10 @@
 		<label for="email" class="block font-medium text-white mt-6">Message</label>
 		<div class="relative mt-2">
 			<div class="overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:ring-1">
-				<label for="title" class="sr-only">Subject</label>
-				<input type="text" name="title" id="title" class="block w-full border-0 pt-2.5 text-lg font-medium placeholder:text-gray-400 focus:ring-0 px-2" placeholder="Subject" />
-				<label for="description" class="sr-only">Description</label>
-				<textarea rows="6" name="description" id="description" class="px-2 block w-full resize-none border-0 py-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Your message..." />
+				<label for="subject" class="sr-only">Subject</label>
+				<input type="text" v-model="subject" name="subject" id="subject" class="block w-full border-0 pt-2.5 text-lg font-medium placeholder:text-gray-400 focus:ring-0 px-2" placeholder="Subject" />
+				<label for="message" class="sr-only">Description</label>
+				<textarea rows="6" v-model="message" name="message" id="message" class="px-2 block w-full resize-none border-0 py-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Your message..." />
 			</div>
 		</div>
 		<div class="flex w-full justify-end mt-6">
@@ -133,10 +133,22 @@ const validateName = computed(() => {
 	return re.test(name.value);
 });
 
-function submitForm() {
+function validateForm() {
 	if (validateEmail.value && validateName.value) {
-		console.log("Form submitted");
+		if (subject.value === "") {
+			errorText.value = "Please enter a subject";
+		}
+		else if (message.value === "") {
+			errorText.value = "Please enter a message";
+		} else {
+			errorText.value = "";
+			submitForm();
+		}
 	}
+}
+
+function submitForm() {
+	//TODO: Handle backend submission
 }
 
 </script>
