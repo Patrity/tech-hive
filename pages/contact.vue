@@ -98,6 +98,7 @@
 </template>
 <script setup lang="ts">
 import { ExclamationCircleIcon, EnvelopeIcon, UserIcon, ChevronUpDownIcon, CheckIcon, PaperAirplaneIcon, ArrowUturnLeftIcon } from '@heroicons/vue/20/solid'
+import axios from "axios";
 definePageMeta({
 	layout: "main",
 });
@@ -133,7 +134,7 @@ const validateName = computed(() => {
 	return re.test(name.value);
 });
 
-function validateForm() {
+async function validateForm() {
 	if (validateEmail.value && validateName.value) {
 		if (subject.value === "") {
 			errorText.value = "Please enter a subject";
@@ -142,13 +143,29 @@ function validateForm() {
 			errorText.value = "Please enter a message";
 		} else {
 			errorText.value = "";
-			submitForm();
+			await submitForm();
 		}
 	}
 }
 
-function submitForm() {
-	//TODO: Handle backend submission
+async function submitForm() {
+	await axios.post("/api/contact" , {
+		email: email.value,
+		name: name.value,
+		contactType: contactType.value,
+		subject: subject.value,
+		message: message.value,
+	}).then((res) => {
+			if (res.status === 200) {
+				formSubmitted.value = true;
+			} else {
+				errorText.value = "Something went wrong. Please try again later.";
+			}
+		})
+		.catch((err) => {
+			errorText.value = err.response.statusText;
+			console.log("Error: ", err.response.statusText);
+		});
 }
 
 </script>
