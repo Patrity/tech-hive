@@ -40,6 +40,11 @@ export default defineEventHandler(async (event) => {
     }).then(r => {
         setResponseStatus(event, 200)
         return "Success";
+    }).catch(err => {
+        return {
+            status: 400,
+            statusText: err.statusText,
+        }
     })
     return {
         status: 400,
