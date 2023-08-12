@@ -20,7 +20,12 @@
 							</div>
 							<div class="py-8 mb-8 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b-2xl p-4 flex flex-col justify-between leading-normal">
 								<div class="">
-									<IndexSwiperCardType :type="project.type"/>
+									<div class="flex">
+										<IndexSwiperCardType class="flex-auto" :type="project.type"/>
+										<div class="flex-auto flex justify-end gap-2">
+											<IndexSwiperCardLinks v-for="link in project.links" :link="link.url" :type="link.name"/>
+										</div>
+									</div>
 									<div class="text-gray-900 font-bold text-xl mb-2">{{project.name}}</div>
 									<p class="text-gray-700 text-base">{{project.description}}</p>
 								</div>
@@ -69,9 +74,12 @@ const projects = [
 		name: "Takeoff Helper",
 		type: "programming",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/takeoffhelper.webp",
-		links: {
-			website: "https://takeoffhelper.com"
-		},
+		links: [
+			{
+				name: "Website",
+				url: "https://takeoffhelper.com",
+			}
+		],
 		description: "Takeoff Helper is a side project that aims to make construction takeoff and estimating software more accessible. " +
 			"It is a SaaS project that allows construction professionals to input basic information and receive quantities and costs for their projects. " +
 			"Takeoff Helper is build using NuxtJS, TailwindCSS, Supabase, ChartsJS and ThreeJS.",
@@ -81,9 +89,20 @@ const projects = [
 		name: "Fireship",
 		type: "marketing",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/fireship.webp",
-		links: {
-			website: "https://takeoffhelper.com"
-		},
+		links: [
+			{
+				name: "YouTube",
+				url: "https://youtube.com/c/Fireship",
+			},
+			{
+				name: "TikTok",
+				url: "https://tiktok.com/@fireship_dev",
+			},
+			{
+				name: "Discord",
+				url: "https://discord.gg/fireship",
+			}
+		],
 		description: "Fireship is one of the top programming YouTubers with over 2,000,000 subscribers. I have been working with Fireship since 2022 " +
 			"and have helped him grow his sponsorship opportunities and general organization. I have helped Jeff at Fireship with video editing, sponsorships, " +
 			"and other miscellaneous tasks. I also currently manage the Fireship TikTok account and the community Discord server.",
@@ -93,9 +112,12 @@ const projects = [
 		name: "RepCord",
 		type: "programming",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/repcord.webp",
-		links: {
-			github: "https://github.com/Repcord-io"
-		},
+		links: [
+			{
+				name: "Github",
+				url: "https://github.com/Repcord-io",
+			}
+		],
 		description: "RepCord was a full stack application and bot for the popular online chat application, Discord." +
 			"RepCord allowed users to create a profile and connect their Discord account. Users could then join servers and " +
 			"leave reviews for other users. RepCord was built using VueJS, and MySQL.",
@@ -105,6 +127,16 @@ const projects = [
 		name: "Kronos",
 		type: "programming",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/kronos.webp",
+		links: [
+			{
+				name: "Website",
+				url: "https://rune-server.org/runescape-development/rs2-server/downloads/696766-kronos-osrs-semi-custom-server-deob-client-multi-world-support-184-a.html",
+			},
+			{
+				name: "Gitlab",
+				url: "https://gitlab.com/rsps-releases/osrs/kronos-osrs-184"
+			},
+		],
 		description: "Kronos was an online multiplayer game that I worked on with a team of 3 other developers. " +
 			"It was a medieval, top down MMORPG. Along with the development of this game, I was also responsible for" +
 			"the marketing, community management and maintenance of this game.",
@@ -114,9 +146,12 @@ const projects = [
 		name: "Nobility Tracker",
 		type: "programming",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/nobilitytracker.webp",
-		links: {
-			github: "https://github.com/Yoters/nobilitytracker/"
-		},
+		links: [
+			{
+				name: "Github",
+				url: "https://github.com/Yoters/nobilitytracker/",
+			}
+		],
 		description: "This web app was built as a Web3 application. It provided a single source of " +
 			"information for users to connect their wallets and track information about the cryptocurrency, Nobility Token. " +
 			"This dashboard was released open source, and later adopted by the team.",
@@ -126,6 +161,16 @@ const projects = [
 		name: "Safemoon - Mooncraft",
 		type: "programming",
 		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/mooncraft.webp",
+		links: [
+			{
+				name: "Github",
+				url: "https://github.com/SafemoonMC",
+			},
+			{
+				name: "Github",
+				url: "https://github.com/Safemoon-Protocol/MoonCraft-Bot",
+			}
+		],
 		description: "I worked as the lead developer for Safemoon's Mooncraft project. The goal was to create a Minecraft server " +
 			"that would allow users to earn cryptocurrency while playing. I was responsible for the development of the server, " +
 			"the website, and the backend. I also managed a team of 6 other developers. We successfully built and deployed the server " +
