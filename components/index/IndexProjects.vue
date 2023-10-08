@@ -73,7 +73,7 @@ const projects = [
 	{
 		name: "Takeoff Helper",
 		type: "programming",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/takeoffhelper.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/takeoffhelper.webp",
 		links: [
 			{
 				name: "Website",
@@ -88,7 +88,7 @@ const projects = [
 	{
 		name: "Fireship",
 		type: "marketing",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/fireship.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/fireship.webp",
 		links: [
 			{
 				name: "YouTube",
@@ -111,7 +111,7 @@ const projects = [
 	{
 		name: "RepCord",
 		type: "programming",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/repcord.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/repcord.webp",
 		links: [
 			{
 				name: "Github",
@@ -126,7 +126,7 @@ const projects = [
 	{
 		name: "Kronos",
 		type: "programming",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/kronos.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/kronos.webp",
 		links: [
 			{
 				name: "Website",
@@ -145,7 +145,7 @@ const projects = [
 	{
 		name: "Nobility Tracker",
 		type: "programming",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/nobilitytracker.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/nobilitytracker.webp",
 		links: [
 			{
 				name: "Github",
@@ -160,7 +160,7 @@ const projects = [
 	{
 		name: "Safemoon - Mooncraft",
 		type: "programming",
-		image: "https://api.takeoffhelper.com/storage/v1/object/public/tech-hive/mooncraft.webp",
+		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/mooncraft.webp",
 		links: [
 			{
 				name: "Github",
