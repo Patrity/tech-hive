@@ -90,7 +90,7 @@
 <script setup lang="ts">
 import icon from "assets/th-icon.svg";
 import logo from "assets/logo.svg";
-import { Bars3Icon, XMarkIcon, HomeIcon, BookOpenIcon, AcademicCapIcon, ChatBubbleLeftRightIcon} from "@heroicons/vue/24/outline";
+import { Bars3Icon, XMarkIcon, HomeIcon, BookOpenIcon, AcademicCapIcon, ChatBubbleLeftRightIcon, UserIcon} from "@heroicons/vue/24/outline";
 
 const sidebarOpen = ref(false);
 
@@ -115,6 +115,11 @@ const navItems = [
 		name: "Contact",
 		link: "/contact",
 		icon: ChatBubbleLeftRightIcon,
+	},
+	{
+		name: "Portal",
+		link: "https://billing.stripe.com/p/login/3cs29e7UD8UF9awaEE",
+		icon: UserIcon,
 	}
 ];
 
