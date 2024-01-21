@@ -22,6 +22,7 @@ export default defineEventHandler(async (event) => {
             }
         );
     }
+    if (process.env.WEBHOOK_URL === undefined) return
     await axios.post(process.env.WEBHOOK_URL, {
         "content": null,
         "embeds": [

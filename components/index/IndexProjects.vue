@@ -124,6 +124,18 @@ const projects = [
 		tags: ["VueJS", "MySQL", "Java", "Kotlin", "Javascript"],
 	},
 	{
+		name: "Adventure Zone Kids",
+		type: "programming",
+		image: "https://img-ss.patrity.com/2024/01/chrome_yok3Ihgt1n.png",
+		links: [
+			{
+				name: "Website",
+				url: "https://adventurezonekids.com",
+			}
+		],
+		tags: ["VueJS", "TailwindCSS", "Nuxt", "Netlify", "PostgreSQL", "TypeScript", "Javascript"],
+	},
+	{
 		name: "Kronos",
 		type: "programming",
 		image: "https://ovzjdhllnxrizgszqlsi.supabase.co/storage/v1/object/public/tech-hive/kronos.webp",
