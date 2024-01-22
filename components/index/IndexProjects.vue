@@ -150,8 +150,8 @@ const projects = [
 			},
 		],
 		description: "Kronos was an online multiplayer game that I worked on with a team of 3 other developers. " +
-			"It was a medieval, top down MMORPG. Along with the development of this game, I was also responsible for" +
-			"the marketing, community management and maintenance of this game.",
+			"It was a medieval, 3D top-down MMORPG. Along with the development of this game, I was also responsible for " +
+			"the marketing, community management, and maintenance of this game.",
 		tags: ["Java", "Kotlin", "MySQL"],
 	},
 	{
