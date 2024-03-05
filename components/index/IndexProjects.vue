@@ -41,8 +41,6 @@
 	</div>
 </template>
 <script setup lang="ts">
-import { CodeBracketIcon, MegaphoneIcon } from "@heroicons/vue/24/outline";
-import IndexSwiperCardType from "~/components/index/IndexSwiperCardType.vue";
 
 const autoplayOptions = {
 	delay: 3000,
@@ -69,7 +67,15 @@ const creativeEffectOptions = {
 	perspective: true,
 	
 }
-const projects = [
+interface Project {
+	name: string;
+	type: string;
+	image: string;
+	links: { name: string, url: string }[];
+	description: string;
+	tags: string[];
+}
+const projects: Project[] = [
 	{
 		name: "Takeoff Helper",
 		type: "programming",
